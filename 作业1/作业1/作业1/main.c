@@ -6,27 +6,46 @@
 //  Copyright © 2018年 赵一波. All rights reserved.
 //
 
-#include<stdio.h>
-int a;
-char b,c[100];
+#include(stdio.h)
+struct student
+{
+    int stu_id;
+    char stu_name;
+    char stu_sex;
+    int stu_dateofbirth;
+    char stu_clsdd;
+    char stu_phoneNO;
+    float stu_judge1;
+    float stu_judge2;
+    float stu_judge3;
+    float stu_judge4;
+    float stu_judge5;
+    float stu_score;
+    struct student *next;
+}student1,student2;
 int main(){
-    FILE * fp1 = fopen("input.txt", "r");//打开输入文件
-    FILE * fp2 = fopen("output.txt", "w");//打开输出文件
-    if (fp1==NULL || fp2==NULL) {//若打开文件失败则退出
-        puts("不能打开文件！");
-        rturn 0;
+    char ch;
+    ch=fgetc(fp);
+    struct student p[2];
+    FILE * fp1 = fopen("input.txt","r");
+    FILE * fp2 = fopen("output.txt","w");
+    if(fp1==NULL||fp2==NULL){
+        printf("打开文件失败")；
+        exit(-1);
     }
-    fscanf(fp1,"%d",&a);//从输入文件读取一个整数
-    b=fgetc(fp1);//从输入文件读取一个字符
-    fgets(c,100,fp1);//从输入文件读取一行字符串
-    
-    printf("%ld",ftell(fp1));//输出fp1指针当前位置相对于文件首的偏移字节数
-    
-    fputs(c,fp2);//向输出文件写入一行字符串
-    fputc(b,fp2);//向输出文件写入一个字符
-    fprintf(fp2,"%d",a);//向输出文件写入一个整数
-    
-    fclose(fp1);//关闭输入文件
-    fclose(fp2);//关闭输出文件，相当于保存
+    while(fgetc!=EOF){
+        while(fgetc!=getchar){
+            while(fgetc!=','){
+                
+            }
+        }
+    }
+    struct student *head,*p;
+    head=&student1;
+    student1.next=&student2;
+    student2.next=0;
+    p=head;
+    fclose(fp1);
+    fclose(fp2);
     return 0;
 }
